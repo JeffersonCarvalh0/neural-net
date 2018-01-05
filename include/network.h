@@ -13,6 +13,7 @@ public:
 
 public:
     Network(const std::vector<size_t> &sizes);
+    double sigmoid(double z);
 };
 
 # endif /* end of include guard: NETWORK_H */

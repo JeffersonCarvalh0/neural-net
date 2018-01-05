@@ -1,5 +1,6 @@
 # include "network.h"
 # include <random>
+# include <cmath>
 
 using namespace std;
 using namespace Eigen;
@@ -33,4 +34,8 @@ Network::Network(const vector<size_t> &sizes) {
             }
         }
     }
+}
+
+double Network::sigmoid(double z) {
+    return 1.0/(1.0 + exp(z));
 }
