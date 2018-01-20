@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -I include
+CXXFLAGS = -std=c++11 -Wall -I include -g
 OBJ = main.o network.o
 VPATH = include:src
 

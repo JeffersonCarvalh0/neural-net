@@ -13,7 +13,8 @@ public:
 
 public:
     Network(const std::vector<size_t> &sizes);
-    double sigmoid(double z);
+    Eigen::VectorXf sigmoid(Eigen::VectorXf &z);
+    Eigen::VectorXf feedforward(Eigen::VectorXf input);
 };
 
 # endif /* end of include guard: NETWORK_H */
