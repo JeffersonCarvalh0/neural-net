@@ -35,14 +35,14 @@ Network::Network(const vector<size_t> &sizes) {
     }
 }
 
-VectorXf Network::sigmoid(VectorXf &z) {
+VectorXf Network::sigmoid(VectorXf &&z) {
     // Applies the sigmoid function on a layer
     z = 1.0 / (1.0 + (z * -1).array().exp());
     return z;
 }
 
-// VectorXf Network::feedforward(VectorXf input) {
-//     for (size_t i = 0; i < weights.size(); ++i)
-//         input = sigmoid((weights[i] * input) + biases[i]);
-//     return input;
-// }
+VectorXf Network::feedforward(VectorXf input) {
+    for (size_t i = 0; i < weights.size(); ++i)
+        input = sigmoid((weights[i] * input) + biases[i]);
+    return input;
+}
